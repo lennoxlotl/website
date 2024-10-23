@@ -1,3 +1,3 @@
-# portfolio
+# website
 
-The portfolio website running on https://lennoxlotl.dev
+The website running on https://lennoxlotl.dev
