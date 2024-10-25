@@ -1,5 +1,5 @@
 <script setup>
-import HeaderLink from '@/components/HeaderLink.vue'
+  import HeaderLink from '@/components/HeaderLink.vue'
 </script>
 
 <template>
@@ -9,9 +9,10 @@ import HeaderLink from '@/components/HeaderLink.vue'
       <p class="pl-2.5 text-xl font-extrabold geist-mono">lennoxlotl.dev</p>
     </div>
 
-    <div class="flex flex-row ml-auto">
+    <div class="flex flex-row ml-auto space-x-4">
       <HeaderLink to="/" name="Home" />
-      <HeaderLink class="ml-4" to="/contact" name="Contact" />
+      <HeaderLink to="/file" name="File" />
+      <HeaderLink to="/contact" name="Contact" />
     </div>
   </div>
 </template>

@@ -1,47 +1,47 @@
 <script setup>
-import { AtSymbolIcon, ChatBubbleBottomCenterIcon, ClipboardDocumentIcon, EnvelopeIcon } from '@heroicons/vue/24/solid';
-import { ref } from 'vue';
-import { createScrollRevealDirective } from 'vue-scroll-reveal';
+  import {AtSymbolIcon, ChatBubbleBottomCenterIcon, ClipboardDocumentIcon, EnvelopeIcon} from '@heroicons/vue/24/solid';
+  import {ref} from 'vue';
+  import {createScrollRevealDirective} from 'vue-scroll-reveal';
 
-const copyButtonText = ref('Click to copy the public key');
+  const copyButtonText = ref('Click to copy the public key');
 
-const contactInfo = [
-  {
-    name: 'Mail',
-    value: 'admin@lennoxlotl.dev',
-    link: 'mailto:admin@lennoxlotl.dev',
-    icon: EnvelopeIcon
-  },
-  {
-    name: 'Discord',
-    value: '@lennoxlotl',
-    link: 'https://discord.com/users/300229572350312448',
-    icon: AtSymbolIcon
-  },
-  {
-    name: 'Telegram',
-    value: '@lennoxlotl',
-    link: 'https://t.me/lennoxlotl',
-    icon: ChatBubbleBottomCenterIcon
-  }
-]
+  const contactInfo = [
+    {
+      name: 'Mail',
+      value: 'admin@lennoxlotl.dev',
+      link: 'mailto:admin@lennoxlotl.dev',
+      icon: EnvelopeIcon
+    },
+    {
+      name: 'Discord',
+      value: '@lennoxlotl',
+      link: 'https://discord.com/users/300229572350312448',
+      icon: AtSymbolIcon
+    },
+    {
+      name: 'Telegram',
+      value: '@lennoxlotl',
+      link: 'https://t.me/lennoxlotl',
+      icon: ChatBubbleBottomCenterIcon
+    }
+  ]
 
-const keyInfo = [
-  {
-    name: 'User-ID',
-    value: 'Lennox Schneider <admin@lennoxlotl.dev>'
-  },
-  {
-    name: 'Type',
-    value: 'ECC (Curve25519)'
-  },
-  {
-    name: 'Fingerprint',
-    value: 'b1e1114bdafdaf366c7437130944a2b4187015df'
-  }
-]
+  const keyInfo = [
+    {
+      name: 'User-ID',
+      value: 'Lennox Schneider <admin@lennoxlotl.dev>'
+    },
+    {
+      name: 'Type',
+      value: 'ECC (Curve25519)'
+    },
+    {
+      name: 'Fingerprint',
+      value: 'b1e1114bdafdaf366c7437130944a2b4187015df'
+    }
+  ]
 
-const publicKey = `
+  const publicKey = `
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 xjMEZRrM+xYJKwYBBAHaRw8BAQdAzlbulWkOtvPs1zYfJRezyab6YupSnt6d
@@ -58,20 +58,21 @@ oUj9R/j1YJGBGNgJNroD
 -----END PGP PUBLIC KEY BLOCK-----
 `;
 
-const delay = ms => new Promise(res => setTimeout(res, ms));
+  const delay = ms => new Promise(res => setTimeout(res, ms));
 
-async function copyPublicKey() {
-  copyButtonText.value = "Copied!";
-  navigator.clipboard.writeText(publicKey);
-  await delay(1000);
-  copyButtonText.value = "Click to copy the public key"
-}
+  async function copyPublicKey() {
+    copyButtonText.value = "Copied!";
+    navigator.clipboard.writeText(publicKey);
+    await delay(1000);
+    copyButtonText.value = "Click to copy the public key"
+  }
 
-const vReveal = createScrollRevealDirective({
-  delay: 0,
-  duration: 700,
-  distance: '20px',
-})
+  const vReveal = createScrollRevealDirective({
+    delay: 0,
+    duration: 700,
+    distance: '20px',
+    origin: 'top'
+  })
 </script>
 
 <template>
@@ -102,7 +103,7 @@ const vReveal = createScrollRevealDirective({
         </span>
       <p class="text-nowrap font-bold text-zinc-300 ml-auto transition overflow-x-auto geist-mono">{{
         info.value
-      }}</p>
+        }}</p>
       </p>
     </div>
     <p class="pt-4 font-bold text-xl">Public key</p>

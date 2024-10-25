@@ -12,6 +12,11 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: () => import('../views/ContactView.vue')
+    },
+    {
+      path: '/file',
+      name: 'file',
+      component: () => import('../views/FileUploadView.vue')
     }
   ]
 })
